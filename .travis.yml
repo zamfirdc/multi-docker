@@ -13,14 +13,14 @@ script:
   #docker run myotherproject runmytests
   - docker run -e CI=true complex/react-test npm test
 after_success:
-  - docker build -t zd/multi-client ./client
-  - docker build -t zd/multi-nginx ./nginx
-  - docker build -t zd/multi-server ./server
-  - docker build -t zd/multi-worker ./worker
+  - docker build -t daniel1122z/multi-client ./client
+  - docker build -t daniel1122z/multi-nginx ./nginx
+  - docker build -t daniel1122z/multi-server ./server
+  - docker build -t daniel1122z/multi-worker ./worker
   # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   #take those images and push them to docker hub
-  - docker push zd/multi-client
-  - docker push zd/multi-nginx
-  - docker push zd/multi-server
-  - docker push zd/multi-worker
+  - docker push daniel1122z/multi-client
+  - docker push daniel1122z/multi-nginx
+  - docker push daniel1122z/multi-server
+  - docker push daniel1122z/multi-worker
