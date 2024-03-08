@@ -18,7 +18,7 @@ after_success:
   - docker build -t complex/multi-server ./server
   - docker build -t complex/multi-worker ./worker
   # Log in to the docker CLI
-  - echo "DOCKER_PASSWORD" | docker login -u "DOCKER_ID" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   #take those images and push them to docker hub
   - docker push complex/multi-client
   - docker push complex/multi-nginx
