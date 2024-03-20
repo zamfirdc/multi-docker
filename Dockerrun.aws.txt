@@ -1,3 +1,4 @@
+//to be used for versions lower than "Amazon Linux 2023 platform"
 {
     "AWSEBDockerrunversion": 2,
     "containerDefinitions": [
@@ -5,25 +6,29 @@
             "name":"client",
             "image": "daniel1122z/multi-client",
             "hostname": "client",
-            "essential": false
+            "essential": false,
+            "memory": 128
         },
         {
             "name":"server",
             "image": "daniel1122z/multi-server",
             "hostname": "api",
-            "essential": false
+            "essential": false,
+            "memory": 128
         },
         {
             "name":"worker",
             "image": "daniel1122z/multi-worker",
             "hostname": "worker",
-            "essential": false
+            "essential": false,
+            "memory": 128
         },
         {
             "name":"nginx",
             "image": "daniel1122z/multi-nginx",
             "hostname": "nginx",
             "essential": true,
+            "memory": 128,
             "portMappings": [
                 {
                     "hostPort": 80,
